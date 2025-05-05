@@ -1,0 +1,61 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.LoginController"
+            stylesheets="@../styles/styles.css"
+            prefHeight="600.0" prefWidth="800.0">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" styleClass="login-container">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <Text text="Remote Patient Monitoring System" styleClass="title-text">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+            </Text>
+            
+            <Text text="Login to your account" styleClass="subtitle-text">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Text>
+            
+            <VBox spacing="10" maxWidth="350" alignment="CENTER">
+                <Label text="Username"/>
+                <TextField fx:id="usernameField" promptText="Enter your username"/>
+                
+                <Label text="Password"/>
+                <PasswordField fx:id="passwordField" promptText="Enter your password"/>
+                
+                <Label text="Role"/>
+                <ComboBox fx:id="roleComboBox" prefWidth="350"/>
+                
+                <Button fx:id="loginButton" text="Login" onAction="#handleLogin"
+                        styleClass="primary-button" maxWidth="Infinity"/>
+                
+                <Text text="For demo purposes, any credentials will work" styleClass="helper-text"/>
+            </VBox>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER">
+            <padding>
+                <Insets bottom="20"/>
+            </padding>
+            <Text text="© 2025 Remote Patient Monitoring System" styleClass="footer-text"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

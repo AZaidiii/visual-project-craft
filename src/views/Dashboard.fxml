@@ -1,0 +1,68 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.DashboardController"
+            stylesheets="@../styles/styles.css"
+            prefHeight="700.0" prefWidth="1000.0">
+    
+    <!-- Top Bar -->
+    <top>
+        <HBox styleClass="app-header" alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            
+            <Label text="RPMS" styleClass="logo-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <Label text="Welcome," styleClass="welcome-text"/>
+            <Label fx:id="userNameLabel" styleClass="username-text"/>
+            <Label text="(" styleClass="role-text"/>
+            <Label fx:id="userRoleLabel" styleClass="role-text"/>
+            <Label text=")" styleClass="role-text"/>
+            
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+    
+    <!-- Sidebar Menu -->
+    <left>
+        <VBox fx:id="sidebarMenu" styleClass="sidebar" prefWidth="200">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+            <!-- Menu items will be added programmatically -->
+        </VBox>
+    </left>
+    
+    <!-- Main Content Area -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area">
+            <TabPane fx:id="mainTabPane" tabClosingPolicy="ALL_TABS">
+                <Tab text="Dashboard" closable="false">
+                    <!-- Tab content will be set programmatically -->
+                </Tab>
+            </TabPane>
+        </StackPane>
+    </center>
+    
+    <!-- Status Bar -->
+    <bottom>
+        <HBox styleClass="status-bar" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="5" right="10" bottom="5" left="10"/>
+            </padding>
+            <Text text="Remote Patient Monitoring System | Version 1.0" styleClass="status-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Text text="© 2025" styleClass="status-text"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>
